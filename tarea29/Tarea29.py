@@ -1,3 +1,5 @@
+
+
 #Sumar números ingresados por el usuario hasta que ingrese 0.
 
 contador = 0
@@ -20,7 +22,7 @@ else:
     
 #Validar contraseña (repetir hasta que coincida con una guardada).
 
-contraguardada = "segura123"
+contraguardada = "123"
 contraingresada = ""
 while contraingresada != contraguardada:
     contraingresada = input("Ingrese la contraseña: ")
@@ -30,40 +32,99 @@ print("correcta")
 
 #Simular un cajero automático (menú: retirar, depositar, salir).
 saldo = 1000
-1 = print("retirar")
-2 = print("depositar")
-3 = print("salir")
-opcion = int(input("Seleccione una opción: "))
+opcion = 0
 while opcion != 3:
+    print("Menú Cajero Automático")
+    print("1. Retirar")
+    print("2. Depositar")
+    print("3. Salir")
+    opcion = int(input("Seleccione una opción: "))
+
     if opcion == 1:
-        cantidad = int(input("Cantidad a retirar: "))
+        cantidad = int(input("Digite la cantidad: "))
         if cantidad <= saldo:
             saldo -= cantidad
-            print(f"Retiraste {cantidad}. Saldo actual: {saldo}")
+            print(f"Retiraste {cantidad}. Tu saldo es: {saldo}")
         else:
-            print("Su saldo es insuficiente.")
-   
+            print("Saldo insuficiente")
     elif opcion == 2:
-        cantidad = int(input("Ingrese la cantidad a depositar: "))
+        cantidad = int(input("Digite la cantidad a depositar: "))
         saldo += cantidad
         print(f"Depositaste {cantidad}. Saldo actual: {saldo}")
+    elif opcion == 3:
+        print("Gracias por utilizar nuestro servicio")
     else:
-
-        print("Gracias por utilizar nuesstro servicio.")
+        print("Intente nuevamente")
     
 
 #Calcular la raíz cuadrada por aproximación (método babilónico).
 
+numero = float(input("Ingrese un número : "))
+babilonico = 1e-10
+aprox = numero / 2.0
+maprox = (aprox + numero / aprox) / 2.0
+
+while (maprox - aprox) ** 2 >= babilonico ** 2:
+    aprox = maprox
+    maprox = (aprox + numero / aprox) / 2.0
+
+print(f"La raíz cuadrada aproximada de {numero} es {maprox}")
+
 #Contar dígitos de un número entero (ej: 456 → 3).
+
+n = int(input("Ingrese un número entero: "))
+cont = 0
+if n == 0:
+    cont = 1
+else:
+    while n != 0:
+        n //= 10
+        cont += 1
+print(f"El número {n} tiene {cont} dígitos.")
 
 #Generar la secuencia de Fibonacci hasta un límite.
 
-#Encontrar números primos en un rango dado.
+limite = int(input("Ingrese el límite para la secuencia de Fibonacci: "))
+a, b = 0, 1
+print("Secuencia de Fibonacci:")
+while a <= limite:
+    print(a, end=" ")
+    a, b = b, a + b
+print()
+
+# Encontrar números primos en un rango dado.
+
+inicio = int(input("inicio del rango: "))
+fin = int(input("fin del rango: "))
+
+print(f"Primos entre {inicio} y {fin}:")
+for numero in range(inicio, fin + 1):
+    if numero > 1:
+        for divisor in range(2, numero):
+            if numero % divisor == 0:
+                break
+        else:
+            print(numero)
 
 #Simular un temporizador (contar regresivamente desde N).
 
+import time
+n = int(input("Ingrese el número para la alarma: "))
+while n > 0:
+    print(n)
+    time.sleep(1)
+    n -= 1
+print("se acabó el tiempo")
+
 #Leer archivos línea por línea hasta fin de archivo.
 
+arch = input("Ingrese el archivo: ")
+archivo = open(arch, 'r')
+linea = archivo.readline()
+while linea:
+    print(linea, end='')
+    linea = archivo.readline()
+archivo.close()
 
 
 
