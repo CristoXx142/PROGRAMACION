@@ -1,0 +1,3 @@
+Materia: Matematicas - Nota: 8.5
+Materia: Lengua - Nota: 9.0
+Materia: Ciencias - Nota: 7.5

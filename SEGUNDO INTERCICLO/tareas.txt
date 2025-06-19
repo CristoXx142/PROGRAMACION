@@ -1,0 +1,5 @@
+Investigar sobre estructuras de datos en Python
+Realizar un programa que calcule el promedio de una lista de números.
+ Leer el capítulo 3 del libro de programación
+ Resolver 5 ejercicios de lógica de programación.
+ Crear un resumen sobre funciones y procedimientos.
